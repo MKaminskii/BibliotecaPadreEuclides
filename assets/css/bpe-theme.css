@@ -1,0 +1,854 @@
+/*
+	Biblioteca Padre Euclides — tema sobre Twenty (HTML5 UP)
+	Paleta: #8B2318 #E68A5C #F0B260 #A8D5BA #FAF7F2
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap");
+
+:root {
+	--bpe-primary: #8B2318;
+	--bpe-primary-dark: #6B1A12;
+	--bpe-orange: #E68A5C;
+	--bpe-gold: #F0B260;
+	--bpe-mint: #A8D5BA;
+	--bpe-bg: #FAF7F2;
+	--bpe-text: #1A1A1A;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	background-color: var(--bpe-bg) !important;
+	color: var(--bpe-text) !important;
+	font-family: "Source Sans 3", "Lato", sans-serif !important;
+}
+
+body, input, select, textarea {
+	font-family: "Source Sans 3", "Lato", sans-serif !important;
+	color: var(--bpe-text) !important;
+}
+
+h1, h2, h3, h4, h5, h6, #logo {
+	font-family: "Libre Baskerville", Georgia, serif !important;
+}
+
+a {
+	color: var(--bpe-primary) !important;
+	border-bottom-color: rgba(139, 35, 24, 0.35) !important;
+}
+
+a:hover {
+	color: var(--bpe-primary-dark) !important;
+	border-bottom-color: transparent !important;
+}
+
+strong {
+	color: var(--bpe-primary-dark) !important;
+}
+
+/* Logo */
+#logo a.logo-link {
+	border: 0 !important;
+	display: inline-block;
+	line-height: 0;
+	padding: 0.25em 0;
+}
+
+#logo img.logo-img {
+	display: block;
+	height: 48px;
+	width: auto;
+	max-width: min(280px, 70vw);
+}
+
+#header #logo img.logo-img {
+	filter: none;
+}
+
+/* Fotos reais: sem textura/overlay vermelho do tema Twenty */
+a.image.featured:before,
+.image.featured:before {
+	display: none !important;
+}
+
+/* Banner */
+#banner.bpe-banner-photo {
+	background-color: var(--bpe-primary-dark) !important;
+	background-image:
+		linear-gradient(to bottom, rgba(26, 26, 26, 0.35), rgba(107, 26, 18, 0.75)),
+		url("../../images/banner.webp") !important;
+	background-position: center center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-attachment: scroll !important;
+	padding: 7em 1.5em 6em !important;
+}
+
+/* Header fixo: espaço extra no banner da home */
+body.index #banner.bpe-banner-photo {
+	padding-top: 10em !important;
+}
+
+/* Caixa do título mais leve — foto visível, texto legível */
+#banner .inner {
+	background: rgba(255, 255, 255, 0.12) !important;
+	backdrop-filter: blur(2px);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	max-width: 42em;
+}
+
+#banner .inner header,
+#banner .inner header h2 {
+	border-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+#banner .inner p {
+	color: #fff !important;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+#banner .inner header h2 {
+	color: #fff !important;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Botão do banner: contraste alto (antes texto bordô em fundo vermelho) */
+#banner .inner .button,
+#banner .inner .button.fit {
+	background: #fff !important;
+	border: 0 !important;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+	color: var(--bpe-primary) !important;
+}
+
+#banner .inner .button:hover,
+#banner .inner .button.fit:hover {
+	background: var(--bpe-gold) !important;
+	color: var(--bpe-text) !important;
+}
+
+#header #nav > ul > li > a.button.primary {
+	background: var(--bpe-primary) !important;
+	color: #fff !important;
+}
+
+#header #nav > ul > li > a.button.primary:hover {
+	background: var(--bpe-primary-dark) !important;
+	color: #fff !important;
+}
+
+/* Header — sempre fundo branco e texto escuro (evita menu branco em fundo branco na home) */
+#header,
+#header.alt,
+#header.reveal,
+#header.alt.reveal {
+	background: #fff !important;
+	box-shadow: 0 1px 0 rgba(139, 35, 24, 0.12) !important;
+	position: fixed !important;
+	padding: 1em 1.5em !important;
+}
+
+body.index #header.alt {
+	top: 0;
+}
+
+#header nav,
+#header.alt nav {
+	right: 1.5em !important;
+	top: 0.75em !important;
+}
+
+#header #nav > ul > li > a:not(.button),
+#header #nav > ul > li > span,
+#header.alt #nav > ul > li > a:not(.button),
+#header.alt #nav > ul > li > span,
+#header.reveal #nav > ul > li > a,
+#header.reveal #nav > ul > li > span {
+	color: var(--bpe-text) !important;
+	text-shadow: none !important;
+}
+
+#header #nav > ul > li.current > a,
+#header.alt #nav > ul > li.current > a {
+	color: var(--bpe-primary) !important;
+	font-weight: 900;
+}
+
+#header #nav > ul > li.active > a,
+#header #nav > ul > li:hover > a {
+	background: rgba(168, 213, 186, 0.35) !important;
+	border-color: transparent !important;
+}
+
+#header.alt #logo a.logo-link {
+	background: transparent !important;
+	padding: 0.25em 0;
+}
+
+/* Submenu "Serviços" — alinhado abaixo do item (sem Dropotron) */
+#header #nav > ul > li.submenu {
+	position: relative;
+}
+
+#header #nav > ul > li.submenu > ul {
+	background: #fff !important;
+	border-radius: 4px;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+	display: none !important;
+	left: 50% !important;
+	list-style: none;
+	margin: 0;
+	min-width: 15em;
+	padding: 0.5em 0 !important;
+	position: absolute !important;
+	right: auto !important;
+	text-align: left;
+	top: 100% !important;
+	transform: translateX(-50%);
+	z-index: 10050;
+}
+
+/* Ponte invisível: evita fechar ao mover o mouse até o submenu */
+#header #nav > ul > li.submenu > ul::before {
+	content: '';
+	display: block;
+	height: 0.65em;
+	left: -1em;
+	position: absolute;
+	right: -1em;
+	top: -0.65em;
+}
+
+#header #nav > ul > li.submenu:hover > ul,
+#header #nav > ul > li.submenu:focus-within > ul,
+#header #nav > ul > li.submenu.submenu-open > ul {
+	display: block !important;
+}
+
+#header #nav > ul > li.submenu.submenu-open > a {
+	background: rgba(168, 213, 186, 0.35) !important;
+}
+
+#header #nav > ul > li.submenu > ul > li {
+	display: block !important;
+	float: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100% !important;
+}
+
+#header #nav > ul > li.submenu > ul > li > a {
+	border: 0 !important;
+	color: var(--bpe-primary) !important;
+	display: block !important;
+	font-size: 0.85em;
+	padding: 0.65em 1.25em !important;
+	white-space: nowrap;
+}
+
+#header #nav > ul > li.submenu > ul > li > a:hover {
+	background: var(--bpe-mint) !important;
+	color: var(--bpe-text) !important;
+}
+
+/* Buttons */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+	box-shadow: inset 0 0 0 2px var(--bpe-primary) !important;
+	color: var(--bpe-primary) !important;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+	background-color: var(--bpe-orange) !important;
+	box-shadow: inset 0 0 0 2px var(--bpe-orange) !important;
+	color: #fff !important;
+}
+
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+button.primary,
+.button.primary {
+	background-color: var(--bpe-primary) !important;
+	box-shadow: none !important;
+	color: #fff !important;
+}
+
+input[type="submit"].primary:hover,
+button.primary:hover,
+.button.primary:hover {
+	background-color: var(--bpe-primary-dark) !important;
+	color: #fff !important;
+}
+
+/* Section wrappers */
+.wrapper.style1 {
+	background: #fff !important;
+}
+
+.wrapper.style2 {
+	background-color: var(--bpe-mint) !important;
+	background-image: none !important;
+	color: var(--bpe-text) !important;
+}
+
+.wrapper.style2 header.major h2,
+.wrapper.style2 header.major p,
+.wrapper.style2 h2,
+.wrapper.style2 h3,
+.wrapper.style2 strong {
+	color: var(--bpe-text) !important;
+}
+
+.wrapper.style3 {
+	background-color: var(--bpe-primary) !important;
+	background-image: none !important;
+	color: #fff !important;
+}
+
+.wrapper.style3 header.major h2,
+.wrapper.style3 header.major p,
+.wrapper.style3 h3,
+.wrapper.style3 p,
+.wrapper.style3 strong {
+	color: #fff !important;
+}
+
+.wrapper.style3 a {
+	color: var(--bpe-gold) !important;
+	border-bottom-color: rgba(240, 178, 96, 0.5) !important;
+}
+
+.wrapper.style4 {
+	background: #fff !important;
+}
+
+/* Icons */
+.icon.solid.featured,
+.icon.featured {
+	background: var(--bpe-primary) !important;
+	color: #fff !important;
+}
+
+.icon.solid.featured.alt {
+	background: var(--bpe-orange) !important;
+}
+
+/* Ícones da faixa verde — sem quadrados, mais espaçados */
+.wrapper.style2 ul.featured-icons {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	gap: 2em 2.5em !important;
+	justify-content: center !important;
+	margin: 0.5em 0 0 !important;
+	opacity: 1 !important;
+	overflow: visible !important;
+	padding: 0.5em 0 !important;
+}
+
+.wrapper.style2 ul.featured-icons li {
+	display: block !important;
+	float: none !important;
+	flex: 0 1 auto !important;
+	margin: 0 !important;
+	min-width: 5.5em !important;
+	padding: 0.25em !important;
+	text-align: center !important;
+	width: auto !important;
+}
+
+.wrapper.style2 ul.featured-icons li .icon {
+	background: none !important;
+	background-color: transparent !important;
+	box-shadow: none !important;
+	color: var(--bpe-primary) !important;
+	display: block !important;
+	font-size: 3em !important;
+	height: auto !important;
+	line-height: 1 !important;
+	margin: 0 auto 0.35em !important;
+	width: auto !important;
+}
+
+.wrapper.style2 ul.featured-icons li .icon:before {
+	color: var(--bpe-primary) !important;
+}
+
+@media screen and (max-width: 980px) {
+	.wrapper.style2 ul.featured-icons {
+		gap: 1.5em 1.75em !important;
+	}
+
+	.wrapper.style2 ul.featured-icons li {
+		min-width: 4.5em !important;
+	}
+
+	.wrapper.style2 ul.featured-icons li .icon {
+		font-size: 2.5em !important;
+	}
+}
+
+/* CTA */
+#cta {
+	background-color: var(--bpe-gold) !important;
+	background-image: none !important;
+	color: var(--bpe-text) !important;
+}
+
+#cta header h2,
+#cta header p {
+	color: var(--bpe-text) !important;
+}
+
+#cta .button.primary {
+	background-color: var(--bpe-primary) !important;
+	color: #fff !important;
+}
+
+/* Footer */
+#footer {
+	background: #fff !important;
+	border-top: 3px solid var(--bpe-orange);
+	color: var(--bpe-text) !important;
+}
+
+#footer .icons li a {
+	background: var(--bpe-primary) !important;
+	color: #fff !important;
+}
+
+#footer .icons li a:hover {
+	background: var(--bpe-orange) !important;
+}
+
+/* Ícones sociais circulares — mesma cor em todo o site (evita azul do Facebook no template) */
+ul.icons li a.icon.circle,
+.icon.circle.fa-facebook-f,
+.icon.circle.fa-instagram,
+.icon.circle.fa-whatsapp,
+.icon.circle.fa-twitter,
+.icon.circle.fa-envelope,
+.icon.circle.fa-google-plus-g,
+.icon.circle.fa-github,
+.icon.circle.fa-dribbble {
+	background: var(--bpe-primary) !important;
+	color: #fff !important;
+}
+
+ul.icons li a.icon.circle:hover,
+.icon.circle.fa-facebook-f:hover,
+.icon.circle.fa-instagram:hover,
+.icon.circle.fa-whatsapp:hover,
+.icon.circle.fa-twitter:hover,
+.icon.circle.fa-envelope:hover,
+.icon.circle.fa-google-plus-g:hover,
+.icon.circle.fa-github:hover,
+.icon.circle.fa-dribbble:hover {
+	background: var(--bpe-orange) !important;
+}
+
+/* Ícone de e-mail: link clicável (mailto falha sem app de e-mail no PC) */
+header.special a.icon.bpe-email-hero {
+	border: none !important;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+header.special a.icon.bpe-email-hero:before {
+	opacity: 0.5;
+	transition: opacity 0.2s ease;
+}
+
+header.special a.icon.bpe-email-hero:hover:before {
+	opacity: 0.85;
+}
+
+#form-contato:target {
+	scroll-margin-top: 6em;
+}
+
+#footer .copyright {
+	color: #666 !important;
+}
+
+#footer .copyright a {
+	color: var(--bpe-primary) !important;
+}
+
+#footer .footer-info {
+	font-size: 0.9em;
+	line-height: 1.6;
+	margin: 1em auto 0;
+	max-width: 40em;
+	opacity: 0.9;
+}
+
+/* Horários */
+.bpe-horarios {
+	background: #fff;
+	border-left: 4px solid var(--bpe-gold);
+	margin: 1.5em auto;
+	max-width: 28em;
+	padding: 1em 1.25em;
+	text-align: left;
+}
+
+.bpe-horarios h3 {
+	color: var(--bpe-primary) !important;
+	font-size: 1.1em;
+	margin-bottom: 0.5em;
+}
+
+.bpe-horarios ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.bpe-horarios li {
+	padding: 0.2em 0;
+}
+
+/* Aviso provisório */
+.bpe-aviso {
+	background: rgba(240, 178, 96, 0.25);
+	border: 1px solid var(--bpe-gold);
+	border-radius: 4px;
+	margin: 1.5em 0;
+	padding: 1em 1.25em;
+}
+
+.bpe-aviso strong {
+	color: var(--bpe-primary) !important;
+}
+
+/* Timeline — linha passa pelo centro do ano */
+.timeline {
+	--timeline-axis: 3.25rem;
+	list-style: none;
+	margin: 2em auto;
+	max-width: 42em;
+	padding: 0;
+	position: relative;
+}
+
+.timeline::before {
+	background: var(--bpe-orange);
+	bottom: 0;
+	content: "";
+	left: var(--timeline-axis);
+	position: absolute;
+	top: 0;
+	transform: translateX(-50%);
+	width: 3px;
+}
+
+.timeline li {
+	align-items: start;
+	column-gap: 1.25rem;
+	display: grid;
+	grid-template-columns: 6.5rem 1fr;
+	margin: 0 0 2em 0;
+	padding: 0;
+	position: relative;
+}
+
+.timeline li::before {
+	background: var(--bpe-gold);
+	border: 3px solid var(--bpe-orange);
+	border-radius: 50%;
+	box-shadow: 0 0 0 2px var(--bpe-mint);
+	content: "";
+	height: 0.85rem;
+	left: var(--timeline-axis);
+	position: absolute;
+	top: 0.75em;
+	transform: translate(-50%, -50%);
+	width: 0.85rem;
+	z-index: 2;
+}
+
+.timeline .timeline-year {
+	background: var(--bpe-gold);
+	border-radius: 4px;
+	box-shadow: 0 0 0 3px var(--bpe-mint);
+	box-sizing: border-box;
+	color: var(--bpe-text);
+	font-family: "Libre Baskerville", Georgia, serif;
+	font-size: 0.88em;
+	font-weight: 700;
+	grid-column: 1;
+	grid-row: 1;
+	justify-self: center;
+	line-height: 1.2;
+	max-width: 6rem;
+	padding: 0.4em 0.45em;
+	position: relative;
+	text-align: center;
+	width: max-content;
+	z-index: 3;
+}
+
+.timeline h3 {
+	color: var(--bpe-primary) !important;
+	font-size: 1.15em;
+	grid-column: 2;
+	grid-row: 1;
+	margin: 0 0 0.35em 0;
+	padding-top: 0.1em;
+}
+
+.timeline p {
+	grid-column: 2;
+	grid-row: 2;
+	margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+	.timeline {
+		--timeline-axis: 1.35rem;
+		padding-left: 0.25rem;
+	}
+
+	.timeline li {
+		grid-template-columns: 1fr;
+		padding-left: 2.5rem;
+	}
+
+	.timeline li::before {
+		top: 0.65em;
+	}
+
+	.timeline .timeline-year {
+		grid-column: 1;
+		grid-row: 1;
+		justify-self: start;
+		margin-left: 0.5rem;
+	}
+
+	.timeline h3 {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.timeline p {
+		grid-column: 1;
+		grid-row: 3;
+	}
+}
+
+/* Mapa */
+.mapa-contato {
+	border: 0;
+	border-radius: 4px;
+	display: block;
+	height: 380px;
+	width: 100%;
+}
+
+/* Formulário de contato */
+.bpe-form-contato {
+	margin: 1.5em auto 0;
+	max-width: 36em;
+}
+
+.bpe-form-contato input[type="text"],
+.bpe-form-contato input[type="email"],
+.bpe-form-contato textarea {
+	width: 100%;
+}
+
+.bpe-form-contato button[type="submit"].button,
+.bpe-form-contato input[type="submit"].button {
+	border: 0 !important;
+	cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.bpe-form-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75em;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.bpe-honey {
+	display: none !important;
+}
+
+.bpe-contato-sucesso {
+	margin-bottom: 1.5em;
+	text-align: center;
+}
+
+.bpe-contato-erro {
+	background: #fde8e6 !important;
+	border-color: var(--bpe-primary) !important;
+	color: var(--bpe-text) !important;
+	margin-bottom: 1.5em;
+	text-align: center;
+}
+
+.bpe-sr-only {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.bpe-contato-dica a {
+	border-bottom: none !important;
+}
+
+.contato-info {
+	margin-bottom: 2em;
+	text-align: left;
+}
+
+.contato-info p {
+	margin: 0.35em 0;
+}
+
+.contato-info .icons {
+	margin-top: 1.5em;
+}
+
+.contato-info .buttons {
+	margin-top: 1em;
+}
+
+.contato-info .bpe-horarios {
+	margin: 1.5em 0 0;
+	max-width: none;
+}
+
+.bpe-contato-form-block {
+	border-top: 1px solid rgba(139, 35, 24, 0.12);
+	margin-top: 2.5em;
+	padding-top: 2em;
+}
+
+.bpe-contato-form-block > h3 {
+	color: var(--bpe-primary) !important;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+
+.bpe-contato-intro {
+	margin: 0 auto 1.5em;
+	max-width: 34em;
+	text-align: center;
+}
+
+.bpe-contato-dica {
+	font-size: 0.9em;
+	margin-top: 1em;
+	text-align: center;
+}
+
+#footer .copyright li {
+	display: inline-block;
+}
+
+#footer .copyright li + li:before {
+	color: #aaa;
+	content: "·";
+	margin: 0 0.5em;
+}
+
+/* Agenda pendente */
+.agenda-pendente {
+	background: rgba(168, 213, 186, 0.35);
+	border: 1px dashed var(--bpe-primary);
+	border-radius: 4px;
+	padding: 2em;
+	text-align: center;
+}
+
+/* Catálogo placeholder */
+.catalogo-placeholder {
+	text-align: center;
+	padding: 2em;
+}
+
+/* Imagens em destaque (páginas internas) */
+.image.featured img {
+	display: block;
+	height: auto;
+	object-fit: cover;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+
+/* Home — Destaques: proporção fixa 277×182 (igual areaLeitura.png), recorte central */
+.bpe-destaques .image.featured {
+	aspect-ratio: 277 / 182;
+	display: block;
+	margin: 0 0 2em 0;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.bpe-destaques .image.featured img {
+	display: block;
+	height: 100%;
+	inset: 0;
+	object-fit: cover;
+	object-position: center;
+	position: absolute;
+	width: 100%;
+}
+
+.image.featured.bpe-img-contain {
+	background: var(--bpe-bg);
+}
+
+.image.featured.bpe-img-contain img {
+	max-height: 14em;
+	object-fit: contain;
+	padding: 1.25em;
+}
+
+#logo a.logo-link.logo-text-fallback {
+	border: 0 !important;
+	color: var(--bpe-primary) !important;
+	font-size: 1.1em;
+	font-weight: 700;
+	line-height: 1.2;
+	max-width: 14em;
+	text-decoration: none;
+}
+
+#header #logo a.logo-link.logo-text-fallback {
+	color: var(--bpe-primary) !important;
+}
+
+/* Sidebar */
+.sidebar section {
+	margin-bottom: 2em;
+}
+
+@media screen and (max-width: 736px) {
+	#logo img.logo-img {
+		height: 40px;
+	}
+}
